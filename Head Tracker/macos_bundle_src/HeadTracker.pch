@@ -1,0 +1,28 @@
+//
+//  HeadTracker.pch
+//  HeadTracker
+//
+//  Created by Neil Immanuel De Guzman on 06/04/2019.
+//  Copyright © 2019 Neil Immanuel De Guzman. All rights reserved.
+//
+
+#ifndef HeadTracker_pch
+#define HeadTracker_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+extern "C"{
+    
+    struct FaceRect{
+        FaceRect(int x, int y, int w, int h) : X(x), Y(y), W(w), H(h) {};
+        
+        int X, Y, W, H;
+    };
+    
+    int Initialize(int &w, int &h, const char *f);
+    void DetectFace(FaceRect &face);
+    void SetScale(int scale);
+    void Close();
+}
+#endif /* HeadTracker_pch */
