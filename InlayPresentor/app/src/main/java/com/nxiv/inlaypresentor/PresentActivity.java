@@ -4,12 +4,15 @@ import android.media.MediaRecorder;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.nxiv.inlaypresentor.camera.AppCamera;
 import com.nxiv.inlaypresentor.permissions.AudioPermission;
+import com.nxiv.inlaypresentor.permissions.ExternalStoragePermission;
 import com.nxiv.inlaypresentor.presentation.Presentation;
 import com.nxiv.inlaypresentor.presentation.PresentationPreview;
 import com.nxiv.inlaypresentor.presentation.Recorder;
@@ -145,19 +148,31 @@ public class PresentActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(isRecording){
+                    Toast.makeText(PresentActivity.this, "Recording stop", Toast.LENGTH_SHORT).show();
                     isRecording = false;
                     recorder.stop();
                 }else{
-                    AudioPermission audioPermission = new AudioPermission(PresentActivity.this);
 
-                    if(!audioPermission.check()) {
-                        audioPermission.request(PresentActivity.this);
+                    AudioPermission audioPermission = new AudioPermission(PresentActivity.this);
+                    ExternalStoragePermission externalStoragePermission = new ExternalStoragePermission(PresentActivity.this);
+
+                    boolean externalPermitted = false;
+                    boolean audioPermitted = false;
+
+                    if(!externalStoragePermission.check())audioPermission.request(PresentActivity.this);
+                    else externalPermitted = true;
+
+                    if(!audioPermission.check()) audioPermission.request(PresentActivity.this);
+                    else audioPermitted = true;
+
+
+                    if(externalPermitted && audioPermitted){
+                        //just testing it out
+                        Toast.makeText(PresentActivity.this, "Recording Start", Toast.LENGTH_SHORT).show();
+                        File file = PresentationFileHandler.getPublicAlbumStorageDir("record");
+                        recorder.record(file.getPath() + "/test.mp4");
+                        isRecording = true;
                     }
-                    else{
-                        File file = PresentationFileHandler.getPublicAlbumStorageDir("asd");
-                        recorder.record(file.getPath());
-                    }
-                    isRecording = true;
                 }
             }
         });

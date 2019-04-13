@@ -21,7 +21,7 @@ public class CameraPermission{
         boolean granted = false;
 
         if(ContextCompat.checkSelfPermission(context, Manifest.permission.CAMERA)
-                != PackageManager.PERMISSION_GRANTED){
+                == PackageManager.PERMISSION_GRANTED){
             granted = true;
         }
 

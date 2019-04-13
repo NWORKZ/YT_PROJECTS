@@ -20,7 +20,7 @@ public class AudioPermission {
         boolean granted = false;
 
         if(ContextCompat.checkSelfPermission(context, Manifest.permission.RECORD_AUDIO)
-                != PackageManager.PERMISSION_GRANTED){
+                == PackageManager.PERMISSION_GRANTED){
             granted = true;
         }
 
