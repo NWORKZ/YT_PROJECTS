@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewPresentationActivity">
+
+    <RelativeLayout
+        android:id="@+id/PPresentationPreviewContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/RotateWidgetLeft"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/PPresentationPreviewContainer"
+        app:layout_constraintEnd_toStartOf="@+id/RotateWidgetRight"
+        app:srcCompat="@drawable/ic_rotate_left_white_24dp" />
+
+    <ImageView
+        android:id="@+id/AddTextButton"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_text_fields_white_24dp" />
+
+    <ImageView
+        android:id="@+id/PreviousSlide"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/NextSlide"
+        app:layout_constraintTop_toBottomOf="@+id/ToggleCamera"
+        app:srcCompat="@drawable/ic_navigate_white_black_24dp" />
+
+    <ImageView
+        android:id="@+id/NextSlide"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/PPresentationPreviewContainer"
+        app:layout_constraintTop_toBottomOf="@+id/SwitchCamera"
+        app:srcCompat="@drawable/ic_navigate_next_white_24dp" />
+
+    <ImageView
+        android:id="@+id/AddImageButton"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AddTextButton"
+        app:srcCompat="@drawable/ic_image_white_24dp" />
+
+    <ImageView
+        android:id="@+id/SwitchCamera"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/PPresentationPreviewContainer"
+        app:layout_constraintTop_toTopOf="@+id/PPresentationPreviewContainer"
+        app:srcCompat="@drawable/ic_switch_camera_white_24dp" />
+
+    <ImageView
+        android:id="@+id/ToggleCamera"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/SwitchCamera"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_camera_alt_white_24dp" />
+
+    <ImageView
+        android:id="@+id/AddSlide"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/PPresentationPreviewContainer"
+        app:layout_constraintStart_toStartOf="@+id/PPresentationPreviewContainer"
+        app:srcCompat="@drawable/ic_add_circle_outline_white_24dp" />
+
+    <ImageView
+        android:id="@+id/RemoveSlide"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/PPresentationPreviewContainer"
+        app:layout_constraintStart_toEndOf="@+id/AddSlide"
+        app:srcCompat="@drawable/ic_remove_circle_outline_white_24dp" />
+
+    <ImageView
+        android:id="@+id/RemoveWidget"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/PPresentationPreviewContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_delete_white_24dp" />
+
+    <ImageView
+        android:id="@+id/RotateWidgetRight"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/PPresentationPreviewContainer"
+        app:layout_constraintEnd_toStartOf="@+id/RemoveWidget"
+        app:srcCompat="@drawable/ic_rotate_white_black_24dp" />
+
+    <ImageView
+        android:id="@+id/MoveWidgetForward"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/RotateWidgetLeft"
+        app:layout_constraintEnd_toStartOf="@+id/MoveWidgetBackward"
+        app:srcCompat="@drawable/ic_arrow_upward_white_24dp" />
+
+    <ImageView
+        android:id="@+id/MoveWidgetBackward"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/RotateWidgetRight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_arrow_downward_white_24dp" />
+
+    <ImageView
+        android:id="@+id/SavePresentation"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/ToggleCamera"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_save_white_24dp" />
+
+    <SeekBar
+        android:id="@+id/WidgetScale"
+        android:layout_width="176dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:max="4"
+        android:progress="2"
+        app:layout_constraintBottom_toBottomOf="@+id/PPresentationPreviewContainer"
+        app:layout_constraintEnd_toStartOf="@+id/RotateWidgetLeft"
+        app:layout_constraintHorizontal_bias="0.968"
+        app:layout_constraintStart_toEndOf="@+id/RemoveSlide" />
+
+</android.support.constraint.ConstraintLayout>

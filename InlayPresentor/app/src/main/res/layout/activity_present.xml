@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PresentActivity">
+
+    <RelativeLayout
+        android:id="@+id/PPresentationPreviewContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/PreviousSlide"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/NextSlide"
+        app:layout_constraintTop_toBottomOf="@+id/SwitchCamera"
+        app:srcCompat="@drawable/ic_navigate_white_black_24dp" />
+
+    <ImageView
+        android:id="@+id/NextSlide"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/PPresentationPreviewContainer"
+        app:layout_constraintTop_toBottomOf="@+id/SwitchCamera"
+        app:srcCompat="@drawable/ic_navigate_next_white_24dp" />
+
+    <ImageView
+        android:id="@+id/SwitchCamera"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/PPresentationPreviewContainer"
+        app:layout_constraintTop_toTopOf="@+id/PPresentationPreviewContainer"
+        app:srcCompat="@drawable/ic_switch_camera_white_24dp" />
+
+    <ImageView
+        android:id="@+id/RecordButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="180dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/PPresentationPreviewContainer"
+        app:srcCompat="@drawable/ic_videocam_blue_24dp" />
+
+</android.support.constraint.ConstraintLayout>
