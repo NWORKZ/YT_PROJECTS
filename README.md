@@ -5,7 +5,7 @@ Collection of source code from my youtube channel
 
 SUPPOSEDLY 2ND PROJECT : INLAY PRESENTOR - APP FOR PRESENTING OVERLAYED DATA
 
-             - The project's stage is pretty raw..i just want the idea will work
+             - The project's stage is pretty raw..i just want to known that if idea will work
              
             - More updates about this project to come
             
