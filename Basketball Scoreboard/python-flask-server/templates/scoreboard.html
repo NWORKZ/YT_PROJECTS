@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div style="text-align: center; border: 5px solid black"><h1>SCORE</h1></div>
+    <div style="text-align: center; border: 5px solid red">
+        <h1 id="score" style="font-size: 800%">{{score}}</h1>
+        <hr>     
+        <button id="resetBtn">Reset Score</button>
+
+    </div>
+
+    <script>
+        var resetBtn = document.getElementById("resetBtn");
+
+        resetBtn.onclick = function(){
+            window.location.replace("/reset");
+        }
+
+        window.onload = function(){
+            setInterval(function(){
+                window.location.reload(true);
+            },1000);
+        }
+
+    </script>
+</body>
+</html>
